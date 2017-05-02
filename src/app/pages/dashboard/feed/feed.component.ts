@@ -21,6 +21,9 @@ export class Feed {
         this._signalR.connect().then((c) => {
       let onMessageSent$ = c.listenFor('broadcastMessage');
       onMessageSent$.subscribe(msg => {
+        if (this.feed.length == 5){
+          this.feed.pop();
+        }
         this.feed.unshift(msg);
       });
     });
