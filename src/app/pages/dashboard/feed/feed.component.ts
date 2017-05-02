@@ -1,6 +1,8 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
-import {FeedService} from './feed.service';
+import { FeedService } from './feed.service';
+
+import { SignalR, SignalRConnection } from 'ng2-signalr';
 
 @Component({
   selector: 'feed',
@@ -9,20 +11,27 @@ import {FeedService} from './feed.service';
 })
 export class Feed {
 
-  public feed:Array<Object>;
+  public feed: Array<Object>;
 
-  constructor(private _feedService:FeedService) {
+  constructor(private _feedService: FeedService, private _signalR: SignalR) {
+    this.feed = [];
   }
 
   ngOnInit() {
-    this._loadFeed();
+        this._signalR.connect().then((c) => {
+      let onMessageSent$ = c.listenFor('broadcastMessage');
+      onMessageSent$.subscribe(msg => {
+        this.feed.unshift(msg);
+      });
+    });
   }
 
-  expandMessage (message){
+  expandMessage(message) {
     message.expanded = !message.expanded;
   }
 
   private _loadFeed() {
-    this.feed = this._feedService.getData();
+
+
   }
 }

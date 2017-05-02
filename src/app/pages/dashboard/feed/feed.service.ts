@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 
+
 @Injectable()
 export class FeedService {
 
@@ -114,6 +115,7 @@ export class FeedService {
       expanded: false,
     }
   ];
+
 
   getData() {
     return this._data;

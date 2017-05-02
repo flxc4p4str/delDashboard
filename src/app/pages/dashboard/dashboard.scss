@@ -21,3 +21,145 @@
 .blurCalendar {
   height: 475px;
 }
+
+
+.lab-img{
+  max-width: 100%;
+}
+.lab-card > .card-body{
+  padding: 0;
+}
+.floor-plan {
+            // background-image: url('../../../assets/img/lab.png');
+            // border: 1px solid #808080;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+        }
+        .tooltip {
+            border: 1px solid #808080;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        /*body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: auto;
+            padding-top: 40px;
+            position: relative;
+            width: 800px;
+        }*/
+
+        /*button {
+            position: absolute;
+            right: 40px;
+            top: 10px;
+        }*/
+
+        .bullet {
+            font: 10px sans-serif;
+        }
+
+            .bullet .marker {
+                stroke: #000;
+                stroke-width: 2px;
+            }
+
+            .bullet .tick line {
+                stroke: #666;
+                stroke-width: .5px;
+            }
+
+            .bullet .range.s0 {
+                fill: #eee;
+            }
+
+            .bullet .range.s1 {
+                fill: #ddd;
+            }
+
+            .bullet .range.s2 {
+                fill: #ccc;
+            }
+
+            .bullet .measure.s0 {
+                fill: steelblue;
+            }
+
+            .bullet .title {
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            .bullet .subtitle {
+                fill: #999;
+            }
+
+
+
+
+
+        #brush {
+            width: 560px;
+            height: 100px;
+            border: 1px solid gray;
+        }
+
+        #brush2 {
+            width: 560px;
+            height: 100px;
+            border: 1px solid gray;
+        }
+
+        .background {
+            visibility: visible !important;
+            fill: #4B9E9E;
+        }
+
+        .extent {
+            visibility: visible !important;
+            fill: #78C5C5;
+        }
+
+        .resize rect {
+            visibility: visible !important;
+            fill: #276C86;
+        }
+
+        .axis {
+            font-size: 10px;
+        }
+
+        .axis path {
+            fill: none;
+            stroke: #000000;
+        }
+
+        .axis .tick line {
+            stroke: #000;
+        }
+
+
+
+
+        .dot circle {
+            fill: lightsteelblue;
+            stroke: steelblue;
+            stroke-width: 1.5px;
+        }
+
+            .dot circle.dragging {
+                fill: red;
+                stroke: brown;
+            }
+
+        /*rect.dragging {
+            fill: blue;
+        }*/
+
+        .axis line {
+            fill: none;
+            stroke: #ddd;
+            shape-rendering: crispEdges;
+            vector-effect: non-scaling-stroke;
+        }

@@ -17,11 +17,19 @@ import { GlobalState } from './global.state';
 import { NgaModule } from './theme/nga.module';
 import { PagesModule } from './pages/pages.module';
 
+import { HttpClientService } from './http-client';
+
+
+import 'signalr/jquery.signalR.js';
+
+import { SignalRModule } from 'ng2-signalr';
+import { SignalRConfiguration } from 'ng2-signalr';
 
 // Application wide providers
 const APP_PROVIDERS = [
   AppState,
-  GlobalState
+  GlobalState,
+  HttpClientService
 ];
 
 export type StoreType = {
@@ -47,7 +55,8 @@ export type StoreType = {
     NgaModule.forRoot(),
     NgbModule.forRoot(),
     PagesModule,
-    routing
+    routing,
+    SignalRModule.forRoot(createConfig)
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     APP_PROVIDERS
@@ -58,4 +67,13 @@ export class AppModule {
 
   constructor(public appState: AppState) {
   }
+}
+
+export function createConfig(): SignalRConfiguration {
+  const c = new SignalRConfiguration();
+  c.hubName = 'AbsolutionHub';
+  c.qs = { user: 'donald' };
+  c.url = 'http://192.168.1.3:21112';
+  c.logging = true;
+  return c;
 }

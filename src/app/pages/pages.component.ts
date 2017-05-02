@@ -4,6 +4,8 @@ import { Routes } from '@angular/router';
 import { BaMenuService } from '../theme';
 import { PAGES_MENU } from './pages.menu';
 
+import { DataService } from '../data.service';
+
 @Component({
   selector: 'pages',
   template: `
@@ -28,7 +30,8 @@ import { PAGES_MENU } from './pages.menu';
       </div>
     </footer>
     <ba-back-top position="200"></ba-back-top>
-    `
+    `,
+  providers: [DataService]
 })
 export class Pages {
 
